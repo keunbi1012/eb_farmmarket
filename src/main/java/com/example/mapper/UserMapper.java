@@ -21,10 +21,10 @@ public class UserMapper {
     private static Map<Long, User> store = new HashMap<>();
     private static long seq = 0L;
 
-    public User save(User user){
-        user.setId(++seq); // auto incremental
+    public User insertUser(User user){
         log.info("Save member = {}", user);
         store.put(user.getId(), user);
+        // DB 
         return user;
     }
 

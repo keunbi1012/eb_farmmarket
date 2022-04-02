@@ -16,7 +16,9 @@ public class LoginService {
 
     
     public User join(User user) {
-        return userMapper.save(user);
+        // TODO: 기존에 있는 사용자인지 확인 : findByLoginId
+        return userMapper.insertUser(user);
+        // TODO: User return 대신 int 값으로 성공 (0), 실패 메세지 (1,2,3)  
     }
 
     public String login(LoginForm loginForm) {
